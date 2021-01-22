@@ -1,5 +1,7 @@
 defmodule Hound.SessionServer do
-  @moduledoc false
+  @moduledoc """
+  Manages the sessions available in current hound session
+  """
 
   use GenServer
   @name __MODULE__
@@ -9,12 +11,14 @@ defmodule Hound.SessionServer do
   end
 
 
+  @spec session_for_pid(any, any) :: any
   def session_for_pid(pid, opts) do
     current_session_id(pid) ||
       change_current_session_for_pid(pid, :default, opts)
   end
 
 
+  @spec current_session_id(any) :: any
   def current_session_id(pid) do
     case :ets.lookup(@name, pid) do
       [{^pid, _ref, session_id, _all_sessions}] -> session_id

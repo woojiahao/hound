@@ -59,6 +59,7 @@ defmodule Hound.Helpers.Page do
   """
   @spec search_element(Hound.Element.strategy, String.t, non_neg_integer) :: {:ok, Hound.Element.t} | {:error, any}
   def search_element(strategy, selector, retries \\ 5) do
+    # Searches based on the current session available, doesn't require the session to be given directly
     session_id = Hound.current_session_id
     params = %{using: Hound.InternalHelpers.selector_strategy(strategy), value: selector}
 

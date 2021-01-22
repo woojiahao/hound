@@ -25,6 +25,8 @@ defmodule Hound.Helpers do
 
   defmacro hound_session(opts \\ []) do
     quote do
+      # This makes the assumption that ExUnit will also be used
+      # TODO: Figure out how this works
       setup do
         Hound.start_session(unquote(opts))
         parent = self()

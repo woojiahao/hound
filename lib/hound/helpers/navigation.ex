@@ -63,6 +63,7 @@ defmodule Hound.Helpers.Navigation do
     end
   end
 
+  # TODO: Important in case there's any issues w.r.t to this
   defp relative_path?(url) do
     String.starts_with?(url, "/")
   end

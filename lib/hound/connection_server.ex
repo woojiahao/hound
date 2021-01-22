@@ -1,6 +1,10 @@
 defmodule Hound.ConnectionServer do
-  @moduledoc false
+  @moduledoc """
+  Manages the information about the connection to web driver
+  """
 
+  # When running from the main callsite, there are no options given so the default
+  # parameters will be assumed
   def start_link(options \\ []) do
     driver = options[:driver] || Application.get_env(:hound, :driver, "selenium")
 

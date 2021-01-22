@@ -77,7 +77,7 @@ defmodule Hound.Helpers.Window do
   end
 
 
-  # TODO
+  # TODO:
   #   @doc "Get window position"
   #   def window_position(window_handle) do
   #   end

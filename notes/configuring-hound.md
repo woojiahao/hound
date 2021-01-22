@@ -2,6 +2,8 @@
 
 To configure Hound, use the project's `config/config.exs` file or equivalent (v0.14.0 and above). Here are some examples:
 
+To run with Selenium, start the `selenium-server.jar` and ensure that the other drivers are not running explicitly, i.e. do not run `chromedriver` and `geckodriver` separately.
+
 ```elixir
 # Start with selenium driver (default)
 config :hound, driver: "selenium"
